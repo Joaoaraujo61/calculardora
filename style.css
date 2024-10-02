@@ -1,14 +1,18 @@
+body{
+    background-color: #363636;
+}
 div#calculadora{
-    background-color: rgb(30, 68, 78);
-    width: 350px;
-    height: 600px;
+    background-color: #808080;
+    width: 300px;
+    height: 480px;
     margin: auto;
     position: relative;
     padding: 10px;
 }
  #resultado{
-    background-color: aliceblue;
-    width: 330px;
+    background-color: white;
+    width: 280px;
+    height: 20px;
     padding: 25px 10px 25px 10px;
     margin: auto;
     margin-bottom: 10px;
@@ -17,15 +21,21 @@ div#calculadora{
     display: flex;
     flex-direction: column;
 }
-#cont_in
 #delete{
     width: 70px;
     height: 70px;
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABbklEQVR4nO2ZQUrDQBSGv52eoLb1CAXxHnHhYdSupV5EPEcFq1hau/MC4s6lrUJdlJGBPzAUK2aSNGN5H4QwE17m/bw3M8kbMAzDMBLlBBgCH4Db8rXQ2FlZEVcNOO82XIMykfAvWAJnQIft0wHO5YOLjcytjL2IprmQLz7NCrOQcZvmacuXeYxxnpup4GL9MSE14Swi2BypBWephaVWLThLLSy1djO1ToHPgv8e96kJOS7xZ5mMkAPgVe+4rmBc14SQfWAs+wdgT/0jYAa01Pb3R+AuVSE3sn0JnPZM1f8M9HT37UmKQvpBBeRo7VkrcH4ViGqlKORNdpcbnvcCESu1/zKus4hQ/Rx52jBHpilG5LdVa/zDqjVTf05SQnZmH9mpnT381ioqZkSCQqrCxfozl2ETxet1DuXLOxEMZeyr4U3TL1PEzmS8VDW8y/bpSsSXfIk+8BlErjhJHfTkZAppfszwL4/eDMMwDOrgG8l1ht3OC+2qAAAAAElFTkSuQmCC");
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSg3o2HyXLZJ3xDkqu9VjdKJx8ddujeZLlgA&s");
     background-repeat: no-repeat;
-    background-size: 70px;
+    background-size: 45px;
+    background-position-x: center;
+    background-position-y: center;
 }
-#numeros_1 input,  #numeros_2 input, #numeros_3 input, #numeros_4 input{
-    width: 70px;
+.carac input{
+    width: 71.2px;
     height: 70px;
+    font-size: large;
+}
+#equal{
+    height: 50px;
+    font-size: large;
 }

@@ -7,34 +7,44 @@
     <title>calculadora</title>
 </head>
 <body>
-    <script src="script.js"></script>
     <div id="calculadora">
-    <div id="resultado">resultado</div>
-    <div id="cont_input"><input type="button" value="" id="delete"></div>
+    <div id="resultado"></div>
     <div id="container">
-        <div id="numeros_1">
+        <div class="carac">
+            <input type="button" value="%">
+            <input type="button" value="x&#178;">
+            <input type="button" value="&#8730;">
+            <input type="button" id="delete" >
+        </div>
+        <div class="carac">
             <input type="button" value="7">
             <input type="button" value="8">
             <input type="button" value="9">
+            <input type="button" value=&#247;>
         </div>
-        <div id="numeros_2">
+        <div class="carac">
             <input type="button" value="4">
             <input type="button" value="5">
             <input type="button" value="6">
+            <input type="button" value=&#215;>
         </div>
-        <div id="numeros_3">
+        <div class="carac">
             <input type="button" value="1">
             <input type="button" value="2">
             <input type="button" value="3">
+            <input type="button" value="-">
         </div>
-        <div id="numeros_4">
-            <input type="button" value="">
+        <div class="carac">
+            <input type="button">
             <input type="button" value="0">
-            <input type="button" value="">
+            <input type="button">
+            <input type="button" value="+">
         </div>
+        <input type="button" value="=" id="equal">
     </div>
     </div>
     
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
