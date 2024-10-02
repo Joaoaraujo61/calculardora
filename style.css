@@ -1,0 +1,31 @@
+div#calculadora{
+    background-color: rgb(30, 68, 78);
+    width: 350px;
+    height: 600px;
+    margin: auto;
+    position: relative;
+    padding: 10px;
+}
+ #resultado{
+    background-color: aliceblue;
+    width: 330px;
+    padding: 25px 10px 25px 10px;
+    margin: auto;
+    margin-bottom: 10px;
+}
+#container{
+    display: flex;
+    flex-direction: column;
+}
+#cont_in
+#delete{
+    width: 70px;
+    height: 70px;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAABbklEQVR4nO2ZQUrDQBSGv52eoLb1CAXxHnHhYdSupV5EPEcFq1hau/MC4s6lrUJdlJGBPzAUK2aSNGN5H4QwE17m/bw3M8kbMAzDMBLlBBgCH4Db8rXQ2FlZEVcNOO82XIMykfAvWAJnQIft0wHO5YOLjcytjL2IprmQLz7NCrOQcZvmacuXeYxxnpup4GL9MSE14Swi2BypBWephaVWLThLLSy1djO1ToHPgv8e96kJOS7xZ5mMkAPgVe+4rmBc14SQfWAs+wdgT/0jYAa01Pb3R+AuVSE3sn0JnPZM1f8M9HT37UmKQvpBBeRo7VkrcH4ViGqlKORNdpcbnvcCESu1/zKus4hQ/Rx52jBHpilG5LdVa/zDqjVTf05SQnZmH9mpnT381ioqZkSCQqrCxfozl2ETxet1DuXLOxEMZeyr4U3TL1PEzmS8VDW8y/bpSsSXfIk+8BlErjhJHfTkZAppfszwL4/eDMMwDOrgG8l1ht3OC+2qAAAAAElFTkSuQmCC");
+    background-repeat: no-repeat;
+    background-size: 70px;
+}
+#numeros_1 input,  #numeros_2 input, #numeros_3 input, #numeros_4 input{
+    width: 70px;
+    height: 70px;
+}
