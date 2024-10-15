@@ -62,19 +62,24 @@ function printCarac(){
 
 function funcEqual(){
     let n = 0
-    let fisrtNum = ""
-    while(n < dbNum.length && !isNaN(dbNum[n])){
-        fisrtNum += String(dbNum[n])
+    let numOper = []
+    let currentNum = ''
+    while(n < dbNum.length){
+        while(!isNaN(dbNum[n]) && dbNum[n] !== " "){
+            currentNum += String(dbNum[n])
+            n++
+        }
+        if(currentNum !== ''){
+            numOper.push(Number(currentNum))
+            currentNum = ""
+        }
         n++
     }
+}
+    /*
     n2 = dbNum.length - 1
     let lastNum = ""
     while(n2 >= 0 && !isNaN(dbNum[n2])){
-        lastNum += String(dbNum[n2])
-        n2--
-    }
-}
-
 
 /*
 function soma(){
