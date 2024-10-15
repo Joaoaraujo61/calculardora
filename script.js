@@ -13,15 +13,17 @@ const poten = document.getElementById('potencia')
 const root = document.getElementById('raiz')
 const equal = document.getElementById('equal')
 
-sum.addEventListener('click', printCarac, soma)
-sub.addEventListener('click',printCarac, subtr)
-div.addEventListener('click',printCarac, divis)
-mult.addEventListener('click',printCarac, multip)
-percent.addEventListener('click',printCarac, porcen)
-poten.addEventListener('click',printCarac, potencial)
-root.addEventListener( 'click',printCarac, raiz)
+sum.addEventListener('click', printCarac)
+sub.addEventListener('click',printCarac)
+div.addEventListener('click',printCarac)
+mult.addEventListener('click',printCarac)
+percent.addEventListener('click',printCarac)
+poten.addEventListener('click',printCarac)
+root.addEventListener( 'click',printCarac)
+equal.addEventListener('click', funcEqual)
 
 var oper = [sum.value, sub.value, div.value, mult.value, percent.value, poten.value, root.value]
+var lastChar = dbNum[dbNum.length - 1]
 
 num.forEach(button =>{
     button.addEventListener('click', print)
@@ -44,6 +46,7 @@ function apagar(){
 
 function printCarac(){
     let lastChar = dbNum[dbNum.length - 1]
+    
     if(lastChar == this.value){
         return
     }else if(dbNum.length == 0){
@@ -57,30 +60,53 @@ function printCarac(){
     }
 }
 
-function soma(){
-      
+function funcEqual(){
+    let n = 0
+    let fisrtNum = ""
+    while(n < dbNum.length && !isNaN(dbNum[n])){
+        fisrtNum += String(dbNum[n])
+        n++
+    }
+    n2 = dbNum.length - 1
+    let lastNum = ""
+    while(n2 >= 0 && !isNaN(dbNum[n2])){
+        lastNum += String(dbNum[n2])
+        n2--
+    }
 }
 
-function subtr(){
 
+/*
+function soma(){
+    let lastChar = dbNum[dbNum.length - 1]
+    let resSoma= dbNum[lastChar-1] + dbNum[lastChar+1]
+}
+function subtr(){
+    let lastChar = dbNum[dbNum.length - 1]
+    let resSub = dbNum[lastChar-1] - dbNum[lastChar+1]
 }
 
 function divis(){
-
+    let lastChar = dbNum[dbNum.length - 1]
+    let resDiv = dbNum[lastChar-1] / dbNum[lastChar+1]
 }
 
 function multip(){
-
+    let lastChar = dbNum[dbNum.length - 1]
+    let resMult = dbNum[lastChar-1] * dbNum[lastChar+1]
 }
 
 function porcen(){
-
+    let lastChar = dbNum[dbNum.length - 1]
+    let resPorcen = dbNum[lastChar-1] + dbNum[lastChar+1]
 }
 
 function potencial(){
-
+    let lastChar = dbNum[dbNum.length - 1]
+    let resPot = dbNum[lastChar-1] + dbNum[lastChar+1]
 }
 
 function raiz(){
-
-}
+    let lastChar = dbNum[dbNum.length - 1]
+    let resRoot = dbNum[lastChar-1] + dbNum[lastChar+1]
+}*/
