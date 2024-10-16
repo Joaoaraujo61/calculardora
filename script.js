@@ -63,18 +63,27 @@ function printCarac(){
 function funcEqual(){
     let n = 0
     let numOper = []
+    let fOper = []
     let currentNum = ''
+    let currentOp = ''
     while(n < dbNum.length){
         while(!isNaN(dbNum[n]) && dbNum[n] !== " "){
             currentNum += String(dbNum[n])
             n++
+        }
+        if(isNaN(dbNum[n]) && dbNum[n] !== ' '){
+            currentOp = dbNum[n]
+            fOper.push(currentOp)
+            currentOp = ''
         }
         if(currentNum !== ''){
             numOper.push(Number(currentNum))
             currentNum = ""
         }
         n++
+        
     }
+    document.write(fOper[0] + ' 4' + fOper[1])
 }
     /*
     n2 = dbNum.length - 1

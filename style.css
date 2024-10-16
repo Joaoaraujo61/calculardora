@@ -4,7 +4,7 @@ body{
 div#calculadora{
     background-color: #808080;
     width: 300px;
-    height: 480px;
+    height: 500px;
     margin: auto;
     position: relative;
     padding: 10px;
@@ -12,10 +12,12 @@ div#calculadora{
  #resultado{
     background-color: white;
     width: 280px;
-    height: 20px;
+    height: 43px;
     padding: 25px 10px 25px 10px;
     margin: auto;
     margin-bottom: 10px;
+    overflow-wrap: break-word;
+    overflow: hidden
 }
 #container{
     display: flex;
