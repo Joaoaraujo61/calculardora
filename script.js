@@ -54,7 +54,13 @@ function printCarac(){
     }else if(oper.includes(lastChar)){
         return
     }else{
-        dbNum.push(this.value)
+        if(this.value === '×'){
+            dbNum.push('*')
+        }else if(this.value === 'x²'){
+            dbNum.push('**')
+        }else {
+            dbNum.push(this.value)
+        }
         output = dbNum.join('')
         res.innerHTML = output
     }
@@ -83,34 +89,79 @@ function funcEqual(){
         n++
         
     }
-    document.write(fOper[0] + ' 4' + fOper[1])
+    verifyOp(fOper, numOper)
 }
-    /*
-    n2 = dbNum.length - 1
-    let lastNum = ""
-    while(n2 >= 0 && !isNaN(dbNum[n2])){
+function verifyOp(fOper, numOper){/*
+    for(let i=0; i< fOper.length; i++){
+        switch(fOper[i]){
+            case '%':
+                porcen(numOper)
+                break
+            case '**':
+                potencial(numOper)
+                break
+            case '√':
+                raiz(numOper)
+                break
+            case '*':
+                multip(numOper)
+                break
+            case '÷':
+                divis(numOper)
+                break
+        }
+        numOper.splice(i + 1, 1)
+        fOper.splice(i, 1)
+        i--
+    }*/
+    for(let i=0; i< fOper.length; i++){
+        switch(fOper[i]){
+            case '-':
+                subtr(numOper)
+                break
+            case '+':
+                soma(numOper)
+                break
+        }
+        numOper.splice(i + 1, 1)
+        fOper.splice(i, 1)
+        i--
+    }
 
-/*
-function soma(){
-    let lastChar = dbNum[dbNum.length - 1]
-    let resSoma= dbNum[lastChar-1] + dbNum[lastChar+1]
+    
 }
-function subtr(){
-    let lastChar = dbNum[dbNum.length - 1]
-    let resSub = dbNum[lastChar-1] - dbNum[lastChar+1]
+function soma(numOper){
+    let result = Number(numOper[0])
+    for(let i=1;i < numOper.length;i++){
+        result += Number(numOper[i])
+    }
+    res.innerHTML = result
 }
-
-function divis(){
-    let lastChar = dbNum[dbNum.length - 1]
-    let resDiv = dbNum[lastChar-1] / dbNum[lastChar+1]
-}
-
-function multip(){
-    let lastChar = dbNum[dbNum.length - 1]
-    let resMult = dbNum[lastChar-1] * dbNum[lastChar+1]
+function subtr(numOper){
+    let result = Number(numOper[0])
+    for(let i=1;i < numOper.length;i++){
+        result -= Number(numOper[i])
+    }
+    res.innerHTML = result
 }
 
-function porcen(){
+function divis(numOper){
+    let result = Number(numOper[0])
+    for(let i=1;i < numOper.length;i++){
+        result /= Number(numOper[i])
+    }
+    res.innerHTML = result
+}
+
+function multip(numOper){
+    let result = Number(numOper[0])
+    for(let i=1;i < numOper.length;i++){
+        result *= Number(numOper[i])
+    }
+    res.innerHTML = result
+}
+
+/*function porcen(){
     let lastChar = dbNum[dbNum.length - 1]
     let resPorcen = dbNum[lastChar-1] + dbNum[lastChar+1]
 }
