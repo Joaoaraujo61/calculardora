@@ -93,6 +93,8 @@ function funcEqual(){
 }
 
 function verifyOp(fOper, numOper){
+    let operacao = operacoes(numOper)
+    let result
     /*for(let i=0; i< fOper.length; i++){
         switch(fOper[i]){
             case '%':
@@ -119,36 +121,46 @@ function verifyOp(fOper, numOper){
     for(let i=0; i< fOper.length; i++){
         switch(fOper[i]){
             case '-':
-                subtr(numOper)
-                break
+                result = operacao.subtr()
+                break;
             case '+':
-                soma(numOper)
-                break
+                result = operacao.soma()
+                break;
         }
-        
-    }
     numOper.splice(i + 1, 1)
-        fOper.splice(i, 1)
-        i--
-
-    
-}
-
-function soma(numOper){
-    let result = Number(numOper[0])
-    for(let i=1;i < numOper.length;i++){
-        result += Number(numOper[i])
+    fOper.splice(i, 1)
+    i--;
     }
-    res.innerHTML = result
-    //document.write(numOper)
+        res.innerHTML = result;
 }
-function subtr(numOper){
+function operacoes(numOper){
     let result = Number(numOper[0])
-    for(let i=1;i < numOper.length;i++){
-        result -= Number(numOper[i])
+
+    function soma(){
+        
+        for(let i=1;i < numOper.length;i++){
+            result += Number(numOper[i])
+        }
+        //res.innerHTML = result
+        return result
+        //document.write(numOper)
     }
-    res.innerHTML = result
-}/*
+
+    function subtr(){
+        //let result = Number(numOper[0])
+        for(let i=1;i < numOper.length;i++){
+            result -= Number(numOper[i])
+        }
+        //res.innerHTML = result
+        return result
+    }
+
+    return{
+        soma: soma, 
+        subtr: subtr
+    }
+}
+/*
 
 function divis(numOper){
     let result = Number(numOper[0])
