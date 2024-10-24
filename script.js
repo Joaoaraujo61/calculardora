@@ -91,8 +91,9 @@ function funcEqual(){
     }
     verifyOp(fOper, numOper)
 }
-function verifyOp(fOper, numOper){/*
-    for(let i=0; i< fOper.length; i++){
+
+function verifyOp(fOper, numOper){
+    /*for(let i=0; i< fOper.length; i++){
         switch(fOper[i]){
             case '%':
                 porcen(numOper)
@@ -114,6 +115,7 @@ function verifyOp(fOper, numOper){/*
         fOper.splice(i, 1)
         i--
     }*/
+    
     for(let i=0; i< fOper.length; i++){
         switch(fOper[i]){
             case '-':
@@ -123,19 +125,22 @@ function verifyOp(fOper, numOper){/*
                 soma(numOper)
                 break
         }
-        numOper.splice(i + 1, 1)
+        
+    }
+    numOper.splice(i + 1, 1)
         fOper.splice(i, 1)
         i--
-    }
 
     
 }
+
 function soma(numOper){
     let result = Number(numOper[0])
     for(let i=1;i < numOper.length;i++){
         result += Number(numOper[i])
     }
     res.innerHTML = result
+    //document.write(numOper)
 }
 function subtr(numOper){
     let result = Number(numOper[0])
@@ -143,7 +148,7 @@ function subtr(numOper){
         result -= Number(numOper[i])
     }
     res.innerHTML = result
-}
+}/*
 
 function divis(numOper){
     let result = Number(numOper[0])
@@ -161,7 +166,7 @@ function multip(numOper){
     res.innerHTML = result
 }
 
-/*function porcen(){
+function porcen(){
     let lastChar = dbNum[dbNum.length - 1]
     let resPorcen = dbNum[lastChar-1] + dbNum[lastChar+1]
 }
