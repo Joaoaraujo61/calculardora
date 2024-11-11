@@ -22,7 +22,7 @@ poten.addEventListener('click',printCarac)
 root.addEventListener( 'click',printCarac)
 equal.addEventListener('click', funcEqual)
 
-var oper = [sum.value, sub.value, div.value, mult.value, percent.value, poten.value, root.value]
+var oper = ['+', '-', '*', '÷', '%', '**', '√']
 var lastChar = dbNum[dbNum.length - 1]
 
 num.forEach(button =>{
@@ -89,79 +89,56 @@ function funcEqual(){
         n++
         
     }
-    verifyOp(fOper, numOper)
+    let result = verifyOp(fOper, numOper)
+    res.innerHTML = result;
+    dbNum = [String(result)];
 }
 
-function verifyOp(fOper, numOper){
-    let operacao = operacoes(numOper)
-    let result
-    /*for(let i=0; i< fOper.length; i++){
-        switch(fOper[i]){
+function verifyOp(fOper, numOper) {
+    // Primeira passagem: operações de alta precedência
+    for (let i = 0; i < fOper.length; i++) {
+        switch (fOper[i]) {
             case '%':
-                porcen(numOper)
-                break
+                numOper[i] = numOper[i] / 100;
+                break;
             case '**':
-                potencial(numOper)
-                break
+                numOper[i] = Math.pow(numOper[i], 2);
+                break;
             case '√':
-                raiz(numOper)
-                break
+                numOper[i] = Math.sqrt(numOper[i]);
+                break;
             case '*':
-                multip(numOper)
-                break
+                numOper[i] *= numOper[i + 1];
+                numOper.splice(i + 1, 1);
+                fOper.splice(i, 1);
+                i--;
+                break;
             case '÷':
-                divis(numOper)
-                break
-        }
-        numOper.splice(i + 1, 1)
-        fOper.splice(i, 1)
-        i--
-    }*/
-    
-    for(let i=0; i< fOper.length; i++){
-        switch(fOper[i]){
-            case '-':
-                result = operacao.subtr()
+                numOper[i] /= numOper[i + 1];
+                numOper.splice(i + 1, 1);
+                fOper.splice(i, 1);
+                i--;
                 break;
+        }
+    }
+
+    // Segunda passagem: operações de baixa precedência
+    let result = numOper[0];
+    for (let i = 0; i < fOper.length; i++) {
+        switch (fOper[i]) {
             case '+':
-                result = operacao.soma()
+                result += numOper[i + 1];
+                break;
+            case '-':
+                result -= numOper[i + 1];
                 break;
         }
-    numOper.splice(i + 1, 1)
-    fOper.splice(i, 1)
-    i--;
     }
-        res.innerHTML = result;
+    return result;
 }
-function operacoes(numOper){
-    let result = Number(numOper[0])
 
-    function soma(){
-        
-        for(let i=1;i < numOper.length;i++){
-            result += Number(numOper[i])
-        }
-        //res.innerHTML = result
-        return result
-        //document.write(numOper)
-    }
 
-    function subtr(){
-        //let result = Number(numOper[0])
-        for(let i=1;i < numOper.length;i++){
-            result -= Number(numOper[i])
-        }
-        //res.innerHTML = result
-        return result
-    }
-
-    return{
-        soma: soma, 
-        subtr: subtr
-    }
-}
 /*
-
 function divis(numOper){
     let result = Number(numOper[0])
     for(let i=1;i < numOper.length;i++){
