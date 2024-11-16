@@ -137,35 +137,3 @@ function verifyOp(fOper, numOper) {
     return result;
 }
 
-
-/*
-function divis(numOper){
-    let result = Number(numOper[0])
-    for(let i=1;i < numOper.length;i++){
-        result /= Number(numOper[i])
-    }
-    res.innerHTML = result
-}
-
-function multip(numOper){
-    let result = Number(numOper[0])
-    for(let i=1;i < numOper.length;i++){
-        result *= Number(numOper[i])
-    }
-    res.innerHTML = result
-}
-
-function porcen(){
-    let lastChar = dbNum[dbNum.length - 1]
-    let resPorcen = dbNum[lastChar-1] + dbNum[lastChar+1]
-}
-
-function potencial(){
-    let lastChar = dbNum[dbNum.length - 1]
-    let resPot = dbNum[lastChar-1] + dbNum[lastChar+1]
-}
-
-function raiz(){
-    let lastChar = dbNum[dbNum.length - 1]
-    let resRoot = dbNum[lastChar-1] + dbNum[lastChar+1]
-}*/
